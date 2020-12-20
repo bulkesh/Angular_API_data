@@ -1,0 +1,15 @@
+
+.container{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 100px;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }

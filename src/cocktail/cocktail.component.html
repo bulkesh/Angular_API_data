@@ -1,0 +1,73 @@
+<div class="container">
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. category, name, ingredient" #input>
+</mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  
+    <!-- idDrink Column -->
+    <ng-container matColumnDef="idDrink">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Drink Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.idDrink}} </td>
+    </ng-container>
+  
+    <!-- strDrink Column -->
+    <ng-container matColumnDef="strDrink">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.strDrink}} </td>
+    </ng-container>
+  
+    <!-- strCategory Column -->
+    <ng-container matColumnDef="strCategory">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
+      <td mat-cell *matCellDef="let element"> {{element.strCategory}} </td>
+    </ng-container>
+  
+    <!-- strAlcoholic Column -->
+    <ng-container matColumnDef="strAlcoholic">
+      <th mat-header-cell *matHeaderCellDef > Alcoholic </th>
+      <td mat-cell *matCellDef="let element"> {{element.strAlcoholic}} </td>
+    </ng-container>
+
+
+    <!-- strIngredient1 Column -->
+    <ng-container matColumnDef="strIngredient1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ingredient 1 </th>
+        <td mat-cell *matCellDef="let element"> {{element.strIngredient1}} </td>
+      </ng-container>
+
+    <!-- strIngredient2 Column -->
+    <ng-container matColumnDef="strIngredient2">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ingredient 2 </th>
+        <td mat-cell *matCellDef="let element"> {{element.strIngredient2}} </td>
+      </ng-container>
+      <!-- strIngredient3 Column -->
+    <ng-container matColumnDef="strIngredient3">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ingredient 3 </th>
+        <td mat-cell *matCellDef="let element"> {{element.strIngredient3}} </td>
+      </ng-container>
+      <!-- strIngredient4 Column -->
+    <ng-container matColumnDef="strIngredient4">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> strIngredient 4 </th>
+        <td mat-cell *matCellDef="let element"> {{element.strIngredient4}} </td>
+      </ng-container>
+
+
+    <ng-container matColumnDef="strDrinkThumb">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let element"> 
+            <img width="50" src="{{element.strDrinkThumb}}">
+             </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="8">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+</div>
