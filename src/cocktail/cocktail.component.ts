@@ -63,7 +63,7 @@ export class CocktailComponent implements OnInit, AfterViewInit, OnDestroy {
     },
     {
       def:'strDrinkThumb',
-      title:'strDrinkThumb',
+      title:'Image',
       type: 'image',
     },
   ];
