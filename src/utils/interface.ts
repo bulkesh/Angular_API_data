@@ -10,7 +10,16 @@ declare interface ApiResponseType {
     'drinks': Drinks[];
 }
 
+/** table column setup */
+
+declare interface TableColumnSetup{
+    def:string;
+    title:string;
+    type: string;
+}
+
 export {
     Drinks,
     ApiResponseType,
+    TableColumnSetup,
 }
